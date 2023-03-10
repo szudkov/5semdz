@@ -1,27 +1,24 @@
-﻿Console.Clear();
-Console.WriteLine($"\nЗадача 36. Сумма элементов, стоящих на нечётных позициях:\n");
-Console.Write($"Введи количество элементов массива: ");
-int numberElements = Convert.ToInt32(Console.ReadLine()); 
+﻿Console.Write("Введите количество элементов массива: ");
+int numberEl = Convert.ToInt32(Console.ReadLine()); 
 
-int RandomNumbers(int numberElements, int min, int max)
+int RandomNum(int numberEl, int min, int max)
   {
-  int[] randomNumbers = new int[numberElements];
-  int sumElements = 0;
-  Console.Write("Получившийся массив: ");
+  int [] randomNum = new int [numberEl];
+  int summa = 0;
+    for (int i = 0; i < randomNum.Length; i++ )
+    {
+      randomNum [i] = new Random().Next(min, max);
 
-    for (int i = 0; i <randomNumbers.Length; i++ ){
-      randomNumbers[i] = new Random().Next(min, max);
-
-      Console.Write(randomNumbers[i] + " ");
+      Console.Write(randomNum [i] + " ");
 
       if (i % 2 != 1)
       {
-        sumElements = sumElements + randomNumbers[i];
+        summa = summa + randomNum [i];
       }
     }
-  return sumElements;
+     return summa;
   }
 
-int randomNumbers =  RandomNumbers(numberElements, 1, 10);
-
-Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях: {randomNumbers}");
+int randomNum =  RandomNum(numberEl, 1, 40);
+Console.WriteLine();
+Console.WriteLine($"Сумма элементов на нечётных позициях: {randomNum}");

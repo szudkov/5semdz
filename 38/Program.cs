@@ -1,27 +1,23 @@
-﻿Console.WriteLine($"\nЗадача 38. Найдите разницу между максимальным и минимальным элементов массива из вещественных чисел:\n");
-
-double[] arrayRealNumbers = new double[10];
-  for (int i = 0; i < arrayRealNumbers.Length; i++ )
+﻿double [] arrayNumbers = new double [50];
+  for (int i = 0; i < arrayNumbers.Length; i++ )
   {
-    arrayRealNumbers[i] = new Random().Next(1, 10);
-    Console.Write(arrayRealNumbers[i] + " ");
+    arrayNumbers [i] = new Random().Next(1, 50);
+    Console.Write(arrayNumbers [i] + " ");
   }
-
-double maxNumber = arrayRealNumbers[0];
-double minNumber = arrayRealNumbers[0];
-
-  for (int i = 1; i < arrayRealNumbers.Length; i++)
+double maxNum = arrayNumbers [0];
+double minNum = arrayNumbers [0];
+for (int i = 1; i < arrayNumbers.Length; i++)
   {
-    if (maxNumber < arrayRealNumbers[i])
+    if (maxNum < arrayNumbers [i])
     {
-      maxNumber = arrayRealNumbers[i];
+      maxNum = arrayNumbers [i];
     }
-        if (minNumber > arrayRealNumbers[i])
+        if (minNum > arrayNumbers [i])
     {
-      minNumber = arrayRealNumbers[i];
+      minNum = arrayNumbers [i];
     }
   }
 
-  double decision = maxNumber - minNumber;
-
-  Console.WriteLine($"\nразница между между максимальным ({maxNumber}) и минимальным({minNumber}) элементами: {decision}");
+  double diff = maxNum - minNum;
+Console.WriteLine();
+Console.WriteLine($"разница между между элементами:{diff}");

@@ -1,34 +1,39 @@
-﻿Console.Clear();
-Console.WriteLine($"Задача 34. Количество чётных чисел в массиве:\n");
-int[] numbers = new int[10];
+﻿Console.WriteLine($"Определяем количество: ");
+int [] numbers = new int [50];
 
-void FillArray(int[] array, int min, int max){
-  for (int i = 0; i<array.Length; i++ ){
+void FillArray(int[] array, int min, int max)
+{
+  for (int i = 0; i<array.Length; i++ )
+  {
     array[i] = new Random().Next(min, max);
   }
 }
 
-void WriteArray(int[] array){
-    for (int i = 0; i<array.Length; i++ ){
+void WriteArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++ )
+    {
     Console.Write(array[i] + " ");
   }
   Console.WriteLine();
 }
 
-int QuantityPositive(int[] array){
-    int quantity = 0;
-    for (int i = 0; i<array.Length; i++ ){
+int KolichestvoChet(int [] array)
+{
+    int kolichestvo = 0;
+    for (int i = 0; i<array.Length; i++ )
+    {
     if (array[i] % 2 == 1)
     {
-      quantity++;
+      kolichestvo++;
     }
   }
-  return quantity;
+  return kolichestvo;
 }
 
 FillArray(numbers, 100, 1000);
 WriteArray(numbers);
 Console.WriteLine();
 
-int quantity = QuantityPositive(numbers);
-Console.WriteLine($"Количество чётных чисел в массиве: {quantity}");
+int kolichestvo = KolichestvoChet(numbers);
+Console.WriteLine($"Количество четных чисел: {kolichestvo}");
